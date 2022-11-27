@@ -1,0 +1,9 @@
+syntax = "proto3"; // the version of the protobuf
+package chat;
+
+option go_package = "github.com/codergirlsu/chat-app/protobuf/chatpb";
+
+message ChatMessage {
+    string content = 1;
+    bytes senderID = 2;
+}
