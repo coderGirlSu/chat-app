@@ -1,9 +1,17 @@
 syntax = "proto3"; // the version of the protobuf
-package chat;
+package conversation;
 
-option go_package = "github.com/codergirlsu/chat-app/protobuf/chatpb";
+option go_package = "conversation/";
 
-message ChatMessage {
+service Chat {
+    rpc SendMessage(SendRequest) returns (SendReply) {}
+}
+
+message SendRequest {
     string content = 1;
     bytes senderID = 2;
+}
+
+message SendReply {
+    string result = 1;
 }
